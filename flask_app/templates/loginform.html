@@ -9,17 +9,16 @@
 </head>
 <body>
     <div class="nav">
-    <h1>Basketball app</h1>
-    <div>
-        <form action="/signupform">
-                <button>Sign Up</button>
-        </form>
-        <form action="/loginform">
-            <button>Log in</button>
-        </form>
-    </div>        
+        <h1>
+            Basketball app
+        </h1>
+        <div class="navright">
+            <form action="/">
+                <button>Home</button>
+            </form>
+        </div>
     </div>
-    <div>
+    <div class="form">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
@@ -27,8 +26,15 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <h2>Love Basketball?</h2>
-    <h3>Sign up now!</h3>
+        <h2>Log in</h2>
+        <form action="/login" method="POST">
+            <p>Email: </p>
+            <input type="email" name="email">
+            <p>Password: </p>
+            <input type="password" name="password">
+            <a href="/signupform">don't have an account?</a>
+            <button>Log In</button>
+        </form>
     </div>
 
 </body>
