@@ -9,7 +9,7 @@ def viewall():
         flash('Must login')
         return redirect('/')
     
-    return render_template("allgames.html")
+    return render_template("allgames.html", games = Game.get_all())
 
 @app.route("/new")
 def new():
@@ -18,3 +18,32 @@ def new():
         return redirect('/')
     
     return render_template("newgame.html")
+
+@app.route("/savegame", methods=["POST"])
+def save():
+    if 'user_id' not in session:
+        flash('Must login')
+        return redirect('/')
+    data = {
+        'user_id': session['user_id'],
+        'hometeam': request.form['hometeam'],
+        'homescore': request.form['homescore'],
+        'awayteam': request.form['awayteam'],
+        'awayscore': request.form['awayscore']
+    }
+    print(data)
+    Game.save(data)
+    return  redirect('/new')
+
+@app.route("/edit")
+def edit():
+    if 'user_id' not in session:
+        flash('Must login')
+        return redirect('/')
+    return render_template("editgames.html", games = Game.get_all())
+
+@app.route("/delete")
+def delete():
+    if 'user_id' not in session:
+        flash('Must login')
+        return redirect('/')
