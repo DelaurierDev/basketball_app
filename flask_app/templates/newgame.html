@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Basketball</title>
 </head>
+
 <body>
     <div class="nav">
         <h1>Basketball App</h1>
@@ -20,16 +22,16 @@
         </div>
     </div>
     <div>
-        <form action="/savegame">
+        <form action="/savegame" method="POST">
             <p>Home Team:</p>
             <input type="text" name="hometeam">
-            <p>Away Team:</p>
-            <input type="text" name="awayteam">
             <p>Home Score:</p>
             <input type="number" name="homescore">
+            <p>Away Team:</p>
+            <input type="text" name="awayteam">
             <p>Away Score:</p>
             <input type="number" name="awayscore">
-            <button>Add</button>
+            <button type="submit">Add</button>
         </form>
-    </div>  
+    </div>
 </body>
