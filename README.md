@@ -1,2 +1,2 @@
 # basketball_app
-collaborators: Luc DeLaurier, 
+collaborators: Luc DeLaurier, Jason Chung
