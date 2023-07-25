@@ -2,6 +2,7 @@ from flask_app import app
 from flask import render_template, redirect,request,session,flash
 import re
 from flask_app.models.user import User
+from flask_app.models.game import Game
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 from flask_bcrypt import Bcrypt
@@ -73,8 +74,7 @@ def logged_in():
     
     return render_template('dashboard.html',
                             username = session['username'],
-                            user_id = session['user_id']
-                           )
+                            user_id = session['user_id'], games = Game.get_all())
 
 #a route for logging out
 @app.route('/logout')
