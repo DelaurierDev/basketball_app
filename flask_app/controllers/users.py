@@ -8,14 +8,17 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
+#route to render index page
 @app.route("/")
 def index():
     return render_template("index.html")
 
+#route to render sign up form
 @app.route("/signupform")
 def signupform():
     return render_template("signupform.html")
 
+#route to render login form
 @app.route("/loginform")
 def loginform():
     return render_template("loginform.html")
