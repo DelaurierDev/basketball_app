@@ -13,8 +13,9 @@
     <div class="nav">
         <h1>Bball title</h1>
         <div class="navright">
-            <a href="/view">All Games</a>
-            <a href="/new">+ Create Game</a>
+            <form action="/new">
+                <button>+ Create Game</button>
+            </form>
             <form action="/logout">
                 <button>Logout</button>
             </form>
@@ -34,12 +35,21 @@
                 <tbody style="border: 1px solid black;">
                     {% for game in games %}
                     <tr>
-                        <td>{{game.hometeam}} vs {{game.awayteam}}</td>
-                        <td><a href="/edit">edit</a></td>
+                        <td><a href="/view/{{game.id}}">{{game.hometeam}} vs {{game.awayteam}}</a></td>
+                        {%if game.user_id == session.user_id%}
+                        <td><a href="/edit/{{game.id}}">edit</a></td>
+                        {%else%}
+                        <td>
+                            <form action="/view/{{game.id}}">
+                                <button>View</button>
+                            </form>
+                        </td>
+                        {%endif%}
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            <h1>
         </div>
     </div>
 </body>
