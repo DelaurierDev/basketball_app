@@ -73,7 +73,7 @@ body{
     align-items: center;
 
 }
-input, .input, .formbottom, .form, .body{
+input, .input, .formbottom, .form, .body, table, .gameview h2, .gameview p{
     margin-top: 20px;
 }
 form{
@@ -101,6 +101,32 @@ form{
     height: 25px;
     width: 120px;
 }
+
+th, td{
+    padding: 15px;
+
+}
+
+.tableleft{
+    border-right: 2px solid #EEF4FC;
+}
+
+.gameview{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gameview h2{
+    font-size: 50px;
+}
+
+.gameview p{
+    font-size: 30px;
+}
+
+
+
 
 /*
  colors
