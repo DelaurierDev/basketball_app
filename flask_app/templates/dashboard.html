@@ -11,7 +11,7 @@
 
 <body>
     <div class="nav">
-        <h1>Bball title</h1>
+        <h1>Basketball</h1>
         <div class="navright">
             <form action="/new">
                 <button class="log_reg" id="create">+ Create Game</button>
@@ -28,14 +28,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Home Team vs Away Team</th>
+                        <th class="tableleft">Home Team vs Away Team</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody style="border: 1px solid black;">
                     {% for game in games %}
                     <tr>
-                        <td><a href="/view/{{game.id}}">{{game.hometeam}} vs {{game.awayteam}}</a></td>
+                        <td class="tableleft"><a href="/view/{{game.id}}">{{game.hometeam}} vs {{game.awayteam}}</a></td>
                         {%if game.user_id == session.user_id%}
                         <td><a href="/edit/{{game.id}}">edit</a></td>
                         {%else%}
