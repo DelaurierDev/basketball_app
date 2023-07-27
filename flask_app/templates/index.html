@@ -8,18 +8,19 @@
     <title>Basketball</title>
 </head>
 <body>
+
     <div class="nav">
     <h1>Basketball app</h1>
-    <div>
-        <form action="/signupform">
+    <div class="navright">
+        <form action="/signupform" class="navbtn">
                 <button>Sign Up</button>
         </form>
-        <form action="/loginform">
+        <form action="/loginform" class="navbtn">
             <button>Log in</button>
         </form>
     </div>        
     </div>
-    <div>
+    <div class="content">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
