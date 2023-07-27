@@ -14,24 +14,27 @@
         <h1>Basketball App</h1>
         <div class="navright">
             <form action="/dashboard">
-                <button>Home</button>
+                <button class="log_reg">Home</button>
             </form>
             <form action="/logout">
-                <button>Logout</button>
+                <button class="log_reg">Logout</button>
             </form>
         </div>
     </div>
     <div>
-        <form action="/savegame" method="POST">
-            <p>Home Team:</p>
+        <form action="/savegame" method="POST" class="form">
+            <p class="input">Home Team:</p>
             <input type="text" name="hometeam">
-            <p>Home Score:</p>
+            <p class="input">Home Score:</p>
             <input type="number" name="homescore">
-            <p>Away Team:</p>
+            <p class="input">Away Team:</p>
             <input type="text" name="awayteam">
-            <p>Away Score:</p>
+            <p class="input">Away Score:</p>
             <input type="number" name="awayscore">
-            <button type="submit">Add</button>
+            <div class="formbottom">
+                <button type="submit" class="log_reg">Add</button>                
+            </div>
+
         </form>
     </div>
 </body>
